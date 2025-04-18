@@ -80,5 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\dbo.AssessmentSteps.Table.sql" />
+    <None Include="MultiTracksDB.publish.xml" />
   </ItemGroup>
 </Project>
