@@ -27,7 +27,7 @@ public partial class artistDetails : Page
         if (!int.TryParse(Request.QueryString["artistID"], out artistID))
         {
             // Default to artistID 1 if not provided or invalid
-            artistID = 2;
+            artistID = 1;
         }
 
         // Use MTDataAccess to call the stored procedure

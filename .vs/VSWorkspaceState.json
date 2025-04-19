@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Web",
+    "\\Web\\multitracks.com",
+    "\\Web\\multitracks.com\\multitracks.com"
   ],
-  "SelectedNode": "\\multitracks.com-dotNet.sln",
+  "SelectedNode": "\\Web\\multitracks.com",
   "PreviewInSolutionExplorer": false
 }
