@@ -172,7 +172,6 @@
     <Content Include="obj\Debug\Multitra.BE7EE264.Up2Date" />
     <Content Include="obj\Debug\Multitracks_Api.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\Multitracks_Api.csproj.CoreCompileInputs.cache" />
-    <Content Include="HttpRequests\Requests.http" />
     <Content Include="HttpRequests\Request.http" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
