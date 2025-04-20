@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTDataAccess", "Core\MTDataAccess\MTDataAccess.csproj", "{564E4868-9DC3-4750-A05A-337A0EC7D421}"
 EndProject
@@ -9,7 +9,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "multitracks.com", "Web\multitracks.com\multitracks.com\", "{87ED2C8E-902B-4400-A71A-41BFF7B98F13}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		ProjectReferences = "{564e4868-9dc3-4750-a05a-337a0ec7d421}|MTDataAccess.dll;"
+		ProjectReferences = "{564e4868-9dc3-4750-a05a-337a0ec7d421}|MTDataAccess.dll;{44b95aba-faa1-42ba-872f-a99058d89fe0}|Multitracks_Api.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56916"
 		Debug.AspNetCompiler.PhysicalPath = "Web\multitracks.com\multitracks.com\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56916\"

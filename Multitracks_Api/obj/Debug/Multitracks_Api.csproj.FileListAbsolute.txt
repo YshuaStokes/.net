@@ -49,11 +49,6 @@ C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\roslyn\
 C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\roslyn\vbc.rsp
 C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\roslyn\VBCSCompiler.exe
 C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\Newtonsoft.Json.xml
-C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\System.Net.Http.Formatting.xml
-C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\System.Web.Http.xml
-C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\System.Web.Http.WebHost.xml
-C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\obj\Debug\Multitracks_Api.csproj.AssemblyReference.cache
 C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\obj\Debug\Multitracks_Api.csproj.CoreCompileInputs.cache
 C:\Users\Y'shua Stokes\Desktop\Important Folder\.net\Multitracks_Api\obj\Debug\Multitra.BE7EE264.Up2Date

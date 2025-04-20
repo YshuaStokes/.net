@@ -3,6 +3,7 @@ using System.Web.UI;
 using System.Data;
 using System.Text;
 using DataAccess;
+using Multitracks_Api.Models; // Add reference to the Models namespace to use TimeSignatureExtensions
 
 public partial class artistDetails : Page
 {
@@ -27,7 +28,7 @@ public partial class artistDetails : Page
         if (!int.TryParse(Request.QueryString["artistID"], out artistID))
         {
             // Default to artistID 1 if not provided or invalid
-            artistID = 1;
+            artistID = 2;
         }
 
         // Use MTDataAccess to call the stored procedure
@@ -50,6 +51,20 @@ public partial class artistDetails : Page
                     ArtistImageURL = DB.Write<string>(ds.Tables[0], "imageURL");
                     ArtistHeroURL = DB.Write<string>(ds.Tables[0], "heroURL");
                     ArtistBiography = FormatBiography(DB.Write<string>(ds.Tables[0], "biography"));
+                }
+
+                // Process time signature values before binding
+                if (ds.Tables[1].Rows.Count > 0)
+                {
+                    foreach (DataRow row in ds.Tables[1].Rows)
+                    {
+                        // Get the time signature value
+                        if (row["timeSignature"] != DBNull.Value && int.TryParse(row["timeSignature"].ToString(), out int timeSignatureValue))
+                        {
+                            // Convert numeric time signature to formatted display string (4/4 or 6/8)
+                            row["timeSignature"] = TimeSignatureExtensions.GetDisplayString(timeSignatureValue);
+                        }
+                    }
                 }
 
                 // Bind Songs data (second result set)
