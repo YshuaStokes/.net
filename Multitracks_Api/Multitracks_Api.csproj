@@ -147,6 +147,7 @@
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\Song.cs" />
+    <Compile Include="Models\TimeSignature.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
