@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Tests",
+    "\\Tests\\Multitracks_Api.Tests"
   ],
-  "SelectedNode": "\\multitracks.com-dotNet.sln",
+  "SelectedNode": "\\Web",
   "PreviewInSolutionExplorer": false
 }

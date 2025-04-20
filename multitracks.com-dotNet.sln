@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{81332685-9D05-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multitracks_Api", "Multitracks_Api\Multitracks_Api.csproj", "{44B95ABA-FAA1-42BA-872F-A99058D89FE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multitracks_Api.Tests", "Tests\Multitracks_Api.Tests\Multitracks_Api.Tests.csproj", "{9A7A02E8-3FF4-49FC-A7A6-2D8260539450}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E93ADBE4-C876-4032-B04B-98008B3D727A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,10 @@ Global
 		{44B95ABA-FAA1-42BA-872F-A99058D89FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B95ABA-FAA1-42BA-872F-A99058D89FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B95ABA-FAA1-42BA-872F-A99058D89FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7A02E8-3FF4-49FC-A7A6-2D8260539450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7A02E8-3FF4-49FC-A7A6-2D8260539450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7A02E8-3FF4-49FC-A7A6-2D8260539450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7A02E8-3FF4-49FC-A7A6-2D8260539450}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +78,7 @@ Global
 		{87ED2C8E-902B-4400-A71A-41BFF7B98F13} = {D81E2F48-0605-463B-96D5-D5F727D15298}
 		{C0455F77-4C86-44AB-A96F-FD433BA1C3BB} = {81332685-9D05-4270-94E1-6B766A2E7A93}
 		{44B95ABA-FAA1-42BA-872F-A99058D89FE0} = {D81E2F48-0605-463B-96D5-D5F727D15298}
+		{9A7A02E8-3FF4-49FC-A7A6-2D8260539450} = {E93ADBE4-C876-4032-B04B-98008B3D727A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C3BA3E6-6743-4DE0-845C-465A67D21BF0}

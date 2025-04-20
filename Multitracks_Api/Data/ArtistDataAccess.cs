@@ -13,14 +13,16 @@ namespace Multitracks_Api.Data
         /// </summary>
         /// <param name="name">Artist name to search for</param>
         /// <returns>List of matching artists</returns>
-        public ResponseModel<List<Artist>> SearchArtists(string name)
+        public virtual ResponseModel<List<Artist>> SearchArtists(string name)
         {
-            SQL sql = new SQL();
+            SQL sql = CreateSQL();
             sql.Parameters.Add("@name", "%" + name + "%");
             
-            DataTable dt = sql.ExecuteDT("SELECT artistID, dateCreation, title, biography, imageURL, heroURL " +
-                                        "FROM dbo.Artist " +
-                                        "WHERE title LIKE @name");
+            string query = "SELECT artistID, dateCreation, title, biography, imageURL, heroURL " +
+                           "FROM dbo.Artist " +
+                           "WHERE title LIKE @name";
+
+            DataTable dt = GetDataTable(sql, query);
             
             List<Artist> artists = new List<Artist>();
             
@@ -54,9 +56,9 @@ namespace Multitracks_Api.Data
         /// </summary>
         /// <param name="artist">Artist to add</param>
         /// <returns>Added artist with ID</returns>
-        public ResponseModel<Artist> AddArtist(Artist artist)
+        public virtual ResponseModel<Artist> AddArtist(Artist artist)
         {
-            SQL sql = new SQL();
+            SQL sql = CreateSQL();
             
             // Add parameters
             sql.Parameters.Add("@title", SqlDbType.VarChar, artist.Title);
@@ -66,10 +68,12 @@ namespace Multitracks_Api.Data
             sql.Parameters.Add("@artistID", SqlDbType.Int);
             sql.Parameters["@artistID"].Direction = ParameterDirection.Output;
 
+            string query = "INSERT INTO dbo.Artist (title, biography, imageURL, heroURL) " +
+                         "VALUES (@title, @biography, @imageURL, @heroURL); " +
+                         "SET @artistID = SCOPE_IDENTITY();";
+
             // Execute the query to insert a new artist and get the ID back
-            sql.Execute("INSERT INTO dbo.Artist (title, biography, imageURL, heroURL) " +
-                                 "VALUES (@title, @biography, @imageURL, @heroURL); " +
-                                 "SET @artistID = SCOPE_IDENTITY();");
+            ExecuteNonQuery(sql, query);
             
             // Get the new artist ID
             int newArtistId = Convert.ToInt32(sql.Parameters["@artistID"].Value);
@@ -83,6 +87,30 @@ namespace Multitracks_Api.Data
             };
             
             return response;
+        }
+
+        /// <summary>
+        /// Creates a new SQL object - can be overridden for testing
+        /// </summary>
+        protected virtual SQL CreateSQL()
+        {
+            return new SQL();
+        }
+
+        /// <summary>
+        /// Executes the query and returns a DataTable - can be overridden for testing
+        /// </summary>
+        protected virtual DataTable GetDataTable(SQL sql, string query)
+        {
+            return sql.ExecuteDT(query);
+        }
+
+        /// <summary>
+        /// Executes a non-query command - can be overridden for testing
+        /// </summary>
+        protected virtual void ExecuteNonQuery(SQL sql, string query)
+        {
+            sql.Execute(query);
         }
     }
 }
