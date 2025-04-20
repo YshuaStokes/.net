@@ -141,6 +141,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\SongController.cs" />
+    <Compile Include="Data\ArtistDataAccess.cs" />
+    <Compile Include="Data\IArtistDataAccess.cs" />
+    <Compile Include="Data\IDataAccess.cs" />
+    <Compile Include="Data\ISongDataAccess.cs" />
+    <Compile Include="Data\SongDataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
