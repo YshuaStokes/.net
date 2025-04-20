@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Web.Http;
 using Multitracks_Api.Data;
 using Multitracks_Api.Models;
@@ -12,8 +11,14 @@ namespace Multitracks_Api.Controllers
 
         public ArtistController()
         {
-            // Initialize data access layer
+            // Default constructor for normal operation
             _artistDataAccess = new ArtistDataAccess();
+        }
+
+        public ArtistController(IArtistDataAccess artistDataAccess)
+        {
+            // Constructor for dependency injection (used in testing)
+            _artistDataAccess = artistDataAccess ?? throw new ArgumentNullException(nameof(artistDataAccess));
         }
 
         [HttpGet]

@@ -14,9 +14,9 @@ namespace Multitracks_Api.Data
         /// <param name="pageNumber">Page number (1-based)</param>
         /// <param name="pageSize">Number of items per page</param>
         /// <returns>Paged list of songs with pagination metadata</returns>
-        public PagedResponseModel<Song> GetPagedSongs(int pageNumber, int pageSize)
+        public virtual PagedResponseModel<Song> GetPagedSongs(int pageNumber, int pageSize)
         {
-            SQL sql = new SQL();
+            SQL sql = CreateSQL();
             
             // Calculate offset for pagination
             int offset = (pageNumber - 1) * pageSize;
@@ -49,7 +49,7 @@ namespace Multitracks_Api.Data
                 OFFSET @Offset ROWS
                 FETCH NEXT @PageSize ROWS ONLY";
             
-            DataTable dt = sql.ExecuteDT(query);
+            DataTable dt = GetDataTable(sql, query);
             
             List<Song> songs = new List<Song>();
             int totalCount = 0;
@@ -104,6 +104,22 @@ namespace Multitracks_Api.Data
             };
             
             return response;
+        }
+
+        /// <summary>
+        /// Creates a new SQL object - can be overridden for testing
+        /// </summary>
+        protected virtual SQL CreateSQL()
+        {
+            return new SQL();
+        }
+
+        /// <summary>
+        /// Executes the query and returns a DataTable - can be overridden for testing
+        /// </summary>
+        protected virtual DataTable GetDataTable(SQL sql, string query)
+        {
+            return sql.ExecuteDT(query);
         }
     }
 }

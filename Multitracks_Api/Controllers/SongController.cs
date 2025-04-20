@@ -1,7 +1,6 @@
 using System;
 using System.Web.Http;
 using Multitracks_Api.Data;
-using Multitracks_Api.Models;
 
 namespace Multitracks_Api.Controllers
 {
@@ -11,8 +10,14 @@ namespace Multitracks_Api.Controllers
 
         public SongController()
         {
-            // Initialize data access layer
+            // Default constructor for normal operation
             _songDataAccess = new SongDataAccess();
+        }
+
+        public SongController(ISongDataAccess songDataAccess)
+        {
+            // Constructor for dependency injection (used in testing)
+            _songDataAccess = songDataAccess ?? throw new ArgumentNullException(nameof(songDataAccess));
         }
 
         [HttpGet]
