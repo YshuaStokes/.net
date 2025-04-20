@@ -1,0 +1,48 @@
+# Multitracks API Test Requests
+@baseUrl = https://localhost:44393
+@contentType = application/json
+
+###
+# @name SearchArtist
+# Search for an artist by name
+GET {{baseUrl}}/api/artist/search?name=hillsong
+
+
+###
+# @name SearchArtistWildcard
+# Search for artists containing "worship" in their name
+GET {{baseUrl}}/api/artist/search?name=worship HTTP/1.1
+
+###
+# @name ListSongs
+# List songs with default paging (page 1, 10 items per page)
+GET {{baseUrl}}/api/song/list HTTP/1.1
+
+###
+# @name ListSongsCustomPaging
+# List songs with custom paging (page 2, 5 items per page)
+GET {{baseUrl}}/api/song/list?pageNumber=2&pageSize=5 HTTP/1.1
+
+###
+# @name AddArtist
+# Add a new artist
+POST {{baseUrl}}/api/artist/add HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "title": "New Test Artist",
+  "biography": "This is a test artist biography created for API testing purposes.",
+  "imageURL": "https://example.com/image.jpg",
+  "heroURL": "https://example.com/hero.jpg"
+}
+
+###
+# @name AddArtistInvalidData
+# Test validation - Missing required fields
+POST {{baseUrl}}/api/artist/add HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "title": "Invalid Artist",
+  "biography": ""
+}
