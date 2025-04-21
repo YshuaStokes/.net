@@ -1,4 +1,5 @@
 using System;
+using MTDataAccess; // Add reference to MTDataAccess for TimeSignature types
 
 namespace Multitracks_Api.Models
 {
