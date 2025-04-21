@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Multitracks_Api.Models
+namespace MTDataAccess
 {
     public enum TimeSignatureType
     {

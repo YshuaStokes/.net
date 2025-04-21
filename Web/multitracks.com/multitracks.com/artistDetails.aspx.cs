@@ -3,7 +3,7 @@ using System.Web.UI;
 using System.Data;
 using System.Text;
 using DataAccess;
-using Multitracks_Api.Models; // Add reference to the Models namespace to use TimeSignatureExtensions
+using MTDataAccess; // Changed from Multitracks_Api.Models to MTDataAccess for TimeSignatureExtensions
 
 public partial class artistDetails : Page
 {
